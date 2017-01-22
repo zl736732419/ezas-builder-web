@@ -1,0 +1,51 @@
+.answerSheetPanel {
+  text-align: center;
+  background-color: #777;
+  width: 100%;
+}
+
+.answerSheetDiv {
+	position: relative;
+	margin-top: 30px;
+	display: inline-block;
+}
+
+.bottom {
+	height: 100px;
+	background-color: #777;
+}
+
+.answerSheetDiv.selected {
+    -webkit-box-shadow:0 0 10px #5bc0de;
+       -moz-box-shadow:0 0 10px #5bc0de; /* Firefox */
+	        box-shadow: 0 0 10px #5bc0de;
+}
+
+.answerSheetPanel .answerSheetSvg {
+  background-color: white;
+}
+.answerSheetPanel .answerSheetSvg .element:hover {
+  cursor: default;
+}
+
+.labelTip {
+	font-size: 14px !important;
+}
+
+/*# sourceMappingURL=answerSheet.css.map */
+
+/*鼠标点击选择元素矩形框*/
+.selectArea {
+    position: absolute;
+
+    border: 1px solid #1ac8b0;
+    -webkit-box-shadow: 0 0 10px #1ac8b0;
+       -moz-box-shadow: 0 0 10px #1ac8b0;
+            box-shadow: 0 0 10px #1ac8b0;
+    background-color: #1ac8b0;
+    opacity: .5;
+}
+
+.bolder {
+    font-weight: bolder;
+}

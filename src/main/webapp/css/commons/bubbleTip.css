@@ -1,0 +1,74 @@
+.bubble-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    display: inline-block;
+    background-color: transparent;
+    margin-bottom: 30px;
+    -webkit-transition: all ease-in-out 500ms;
+       -moz-transition: all ease-in-out 500ms;
+            transition: all ease-in-out 500ms;
+}
+
+.bubble-box ul,
+.bubble-box ul li {
+    line-height: 30px;
+    list-style-type: disc !important;
+    padding-left: 15px;
+}
+
+
+.bubble-box .wrap {
+    background: #EEE;
+    /* 修正IE6 */
+    _position: relative;
+    _z-index: 10;
+
+    border-radius: 5px;
+}
+
+/* arrow-effect */
+.arrow-left {
+    border-left: 20px solid #3c3c3c;
+    border-top: 20px solid #EEE;
+}
+
+.arrow-right {
+    border-right: 20px solid #3c3c3c;
+    border-top: 20px solid #EEE;
+}
+
+.arrow-top-left {
+    border-left: 20px solid #EEE;
+    border-top: 20px solid #3c3c3c;
+}
+
+.arrow-top-right {
+    border-right: 20px solid #EEE;
+    border-top: 20px solid #3c3c3c;
+}
+
+.arrow-bottom {
+    border-left: 20px solid #EEE;
+    border-bottom: 20px solid #3c3c3c;
+}
+
+.bubble-box .wrap {
+    position: absolute;
+    padding: 12px 10px 12px 10px;
+}
+
+.arrow-left .wrap,
+.arrow-right .wrap {
+    margin-top: -40px;
+}
+
+.arrow-top-left .wrap,
+.arrow-bottom .wrap {
+    margin-left: -40px;
+}
+
+.arrow-top-right .wrap {
+    margin-right: -40px;
+}

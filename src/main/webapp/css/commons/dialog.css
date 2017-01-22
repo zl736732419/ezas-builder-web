@@ -1,0 +1,353 @@
+@CHARSET "UTF-8";
+
+/****题卡纸张配置******/
+.a3Columns {
+	display: none;
+}
+
+.zkzhPanel {
+	margin-top: 5px;
+}
+
+.zkzhCount {
+	padding: 5px !important;
+}
+
+.blockLabel {
+	display:block;
+	margin-bottom: 5px !important;
+}
+
+.attentionNoteBtn {
+	font-weight: bolder;
+	color: #0075C9;
+}
+
+/****题卡纸张配置******/
+
+/****单选题*****/
+
+#choiceQuestionContainer,
+#fillItemContainer {
+	height: 350px;
+}
+
+.questionItemPanel {
+	position: relative;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	-moz-border-radius: 3px; /* Firefox */
+	-webkit-border-radius: 3px; /* Safari 和 Chrome */
+	margin-bottom: 35px !important;
+	margin-left: 15px;
+	margin-right: 15px;
+	padding-top: 10px;
+}
+
+.questionItemPanel:hover {
+	-moz-box-shadow:0 3px 4px #888;
+	-webkit-box-shadow:0 3px 4px #888;
+	box-shadow:0 3px 4px #888;
+}
+
+.optsFirstPanel {
+	margin-right: 15px;
+	margin-top: -5px;
+}
+
+.optsPanel {
+	position: absolute;
+	top: -32px;
+	right: 64px;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0; /* Firefox */
+	-webkit-border-radius: 5px 5px 0 0; /* Safari 和 Chrome */
+	padding: 3px 5px;
+	opacity: 0;
+	z-index: 1;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.optsPanel i {
+    line-height: 24px;
+}
+
+.questionItemPanel:hover .optsPanel {
+	opacity: 1;
+	-webkit-transform: translate(100%,0);
+    -moz-transform: translate(100%,0);
+    -o-transform: translate(100%,0);
+    -ms-transform: translate(100%,0);
+    transform: translate(100%,0);
+}
+
+.opts a i, 
+.optsFirstPanel a i {
+	line-height: 24px;
+}
+
+.opts .btn-remove {
+	color: #e00 !important;
+}
+
+.optsPanel a.btn-remove {
+	color: #e00;
+}
+
+.optsPanel a.btn-add, .optsFirstPanel a.btn-add-first {
+	color: #007400;
+}
+/****单选题*****/
+
+/****主观题翻页****/
+.nextItem {
+	width: 50px;
+	display: inline-block;
+	padding-right: 12px !important;
+}
+
+.hor-center {
+	text-align: center;
+}
+
+.zgItemGridPanel {
+	display: inline-block;
+	visibility: hidden;
+	position:relative;
+}
+
+.zgItemGridPanel i {
+	right: 0 !important;
+}
+
+.zgItemGridNum  {
+	display: inline-block;
+	width: 80px;
+}
+
+/****主观题翻页****/
+
+/****validator****/
+.has-error {
+	color: #e00;
+	font-weight: bold;
+}
+/****validator****/
+
+/****作文导航*****/
+#compositionTabContent {
+	padding-top: 15px;
+}
+
+.compositionLine {
+	width: 80px !important;
+	display: inline-block;
+	margin: 0 5px;
+}
+/****作文导航*****/
+
+/* 插图设置*/
+
+#insetDialog .modal-body {
+	padding: 0;
+}
+
+.inset-menu {
+	height: 500px;
+}
+
+.inset-menu li a {
+	height: 50px;
+	line-height: 50px;
+	display: block;
+	padding: 0 20px;
+	border-radius: 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	background: 0 0;
+}
+
+.inset-menu li.active {
+	background-color: #fff;
+    border-bottom: 1px solid #ccd5db;
+}
+
+.inset-menu li.active a {
+	color: #59c7f9;
+}
+
+.upload-panel {
+	position: absolute;
+    left: 2px;
+    bottom: 2px;
+    color: #fff;
+    text-align: center;
+    background-color: #59c7f9;
+    width: 149px;
+	height: 55px;
+}
+
+.upload-panel:hover {
+    cursor: default;
+}
+
+.upload-tip {
+	position: relative;
+	display: inline-block;
+	z-index: 1;
+}
+
+.upload-panel em {
+	padding-left: 10px;
+	line-height: 55px;
+	font-size: 18px;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.opt-panel {
+    border-bottom: 1px solid #ccd5db;
+    font-size: 12px;
+    padding: 6px 0;
+}
+
+.opt-icon {
+	visibility: hidden;
+	display: inline-block;
+	padding: 10px 0;
+}
+
+.opt-panel a {
+	padding: 10px 0;
+	text-align: center;
+	margin-right: 20px;
+}
+
+.opt-show {
+	display: inline-block;
+}
+
+.opt-hide {
+	display: none;
+}
+
+.image-list {
+	overflow: hidden;
+}
+
+.image-list-container {padding-top: 10px;}
+
+.image-box {
+	height: 430px;
+	margin-bottom: 0;
+}
+
+.image-item {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	cursor: pointer;
+	text-align: center;
+	width: 110px;
+	margin: 0 5px 16px 0;
+	vertical-align: middle;
+}
+
+.image-view {
+	position: relative;
+	text-align: center;
+	background-color: #e6ebed;
+	overflow: hidden;
+	display: inline-block;
+	width: 100%;
+	height: 110px;
+	border: 1px solid #ccc;
+}
+
+.title-panel {
+	overflow: hidden;
+	display: inline-block;
+	width: 100%;
+	padding-top: 5px;
+	margin: 0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.image-mask {
+	position: absolute;
+    width: 100%;
+    height: 35px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+    display: none;
+}
+
+.image-item.manage .image-mask {
+	display: block;
+}
+
+.select-icon {
+	padding: 5px 0;
+}
+
+.image-mask.active .select-icon {
+	color: #59c7f9;
+}
+
+.fancybox {
+	display: inline-block;
+	width: 100%;
+}
+
+.title-panel:hover .image-title {
+	color: #ff9c32;
+}
+
+.title-panel .image-title {
+	display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.upload-panel {
+	position: relative;
+}
+
+#file_upload {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	opacity: 0;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+object {
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#file_upload-button {
+	width: 100% !important;
+	height: 100% !important;
+	text-align: center;
+}
+
+.uploadify-queue-item {
+	background-color: #59c7f9;
+}
+
+/* 插图设置*/

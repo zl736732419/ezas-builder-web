@@ -1,0 +1,136 @@
+/*题卡列表样式*/
+
+body {
+    font-family: "microsoft yahei", Tahoma, Helvetica, serif;
+}
+
+.sheet-logo {
+    padding-left: 0 !important;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav li:hover {
+   /* background-color: #eee; */
+}
+
+.right-bar {
+    margin-right: 20px;
+}
+
+/*搜索框样式*/
+/* .search-panel {
+    position: fixed;
+    right: 20px;
+    z-index: 1;
+    top: 50px;
+    width: 300px;
+    padding: 20px 10px;
+} */
+
+.search-bar {
+    background-color: white;
+    text-align: center;
+}
+
+.searchBtn {
+    padding: 5px 20px;
+}
+
+.sheet-list, .search-panel {
+    margin-top: 70px;
+}
+
+.sheet-list {
+    margin-bottom: 50px;
+}
+
+.sheet-list .row {
+    margin: 0;
+}
+
+.sheet-list .page-tip {
+    display: inline-block;
+}
+
+.round_marks {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    display:inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    background: #288add;
+    font-size: 18px;
+}
+
+.sheet-title {
+    position: relative;
+    height: 40px;
+    display:inline-block;
+    padding: 10px 0;
+}
+
+.sheet-item:hover .sheet-title a {
+    font-size: 18px;
+}
+
+.sheet-info {
+    padding: 5px 0;
+    font-size: 14px;
+    color: #8c8c8c;
+    font-weight: normal;
+}
+
+.info {
+    margin-right: 60px;
+}
+
+.search-input {
+    display: inline-block;
+}
+
+.item-opts {
+    float:right;
+    margin-right: 20px;
+}
+
+.icon-remove {
+    color: #e00;
+}
+
+/*.icon-remove:hover {*/
+    /*cursor: pointer;*/
+    /*font-size: 2em;*/
+/*}*/
+
+.fa-1x {
+    font-size: 1.5em;
+}
+
+/*回顶部*/
+.to-top-panel {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    right: 25px;
+    bottom: 50px;
+    opacity: .7;
+    transition: all .3s ease-in-out;
+}
+
+.to-top-panel.hide {
+    opacity: 0;
+}
+
+.to-top-panel:hover {
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.2)
+}
+
+/*回顶部 end*/

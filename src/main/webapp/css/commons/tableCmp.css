@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+/*表格控件*/
+.tableRowLine:hover {
+    cursor: n-resize;
+}
+.tableColLine:hover {
+    cursor: e-resize;
+}
+/*表格控件 end*/

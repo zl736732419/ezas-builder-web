@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+/*改错题组件*/
+.mistakeArticle, .textContentDiv, .tableText {
+	padding: 0 10px;
+    margin-top: 3px;
+	outline: none;
+
+	font-family: SimSun, 'microsoft yahei',Tahoma, Helvetica, serif;
+	font-size: 15px;
+	text-align: left;
+	line-height: 20px;
+	color: #000;
+	overflow: hidden;
+	word-wrap: normal;
+	word-break: normal;
+	white-space: nowrap;
+}
+
+.mistakeArticle div, .textContentDiv div, .tableText div {
+    border: 1px dashed transparent;
+    font-family: SimSun, 'microsoft yahei',Tahoma, Helvetica, serif;
+	word-wrap: normal;
+	word-break: normal;
+	white-space: nowrap;
+}
+
+.mistakeArticle div.active, .textContentDiv div.active {
+    border: 1px dashed #ccc;
+}
+/*改错题组件 end*/

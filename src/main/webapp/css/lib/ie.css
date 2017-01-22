@@ -1,0 +1,22 @@
+.jumbotron .container-fluid{
+	margin-top:10px;	
+}
+
+ul.school-list li >span:FIRST-CHILD{
+    padding: 11px 2px;
+}
+
+@media (max-width: 992px){
+	.header-expanded {
+		margin-left: 180px;
+	}
+	
+	.sidebar {
+		width:180px;
+	}
+}
+
+.panel.selected {
+	-ms-filter:progid:DXImageTransform.Microsoft.Shadow(Strength=8,Direction=135, Color='#5bc0de');
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=8,Direction=135,Color='#5bc0de');
+}

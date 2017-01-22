@@ -1,0 +1,129 @@
+.operation-tip {
+    /* position: absolute; */
+    bottom: 0px;
+    left: 0;
+    z-index: 100;
+}
+
+.operation-tip .tip-container {
+	display: none;
+	position: absolute;
+	bottom: 40px;
+	left:  0;
+}
+
+/*提示图标*/
+.operation-tip .tip-icons:hover {
+    cursor: pointer;
+}
+
+.operation-tip .tip-question,
+.operation-tip .tip-answer {
+    display: inline-block;
+}
+
+.operation-tip .tip-answer {
+    display: none;
+}
+
+.operation-tip .tip-bubble {
+    margin-left: 100px;
+}
+/*提示图标*/
+
+/*提示气泡*/
+.operation-tip svg ellipse{
+    fill: #fff;
+    stroke: orange;
+    stroke-width: 1mm;
+}
+
+.operation-tip .tip-panel,
+.operation-tip .tip-title {
+    position: absolute;
+    right: 70px;
+    width: 500px;
+    height: 220px;
+    padding: 2px;
+    overflow:hidden;
+}
+
+.operation-tip .tip-panel {
+    top:80px;
+}
+
+/*设置气泡动画*/
+.operation-tip svg ellipse {
+    transform: scale(0.3);
+    transform-origin: center;
+    transition: opacity .4s ease,
+                transform .4s ease;
+    opacity: 0;
+}
+
+.operation-tip .tip-icons {
+    display: inline-block;
+}
+
+.operation-tip .tip-body {
+    transition: opacity .1s ease;
+    opacity: 0;
+}
+
+.operation-tip .tip-container.active ellipse {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.operation-tip .tip-container.active .tip-body {
+    opacity: 1;
+    transition-delay: .4s;
+}
+
+.operation-tip .tip-container.active ellipse#large1 {
+    transition-delay: 0;
+}
+
+.operation-tip .tip-container.active ellipse#large2 {
+    transition-delay: .1s;
+}
+
+.operation-tip .tip-container.active ellipse#large3 {
+    transition-delay: .2s;
+}
+
+.operation-tip .tip-container.active ellipse#large4 {
+    transition-delay: .3s;
+}
+
+/*设置气泡动画*/
+
+/*提示气泡内容*/
+.operation-tip ul,
+.operation-tip ul li {
+    line-height: 30px;
+    list-style-type: disc !important;
+    padding-left: 15px;
+}
+
+.operation-tip .tip-over {
+	text-align: right;
+}
+
+
+/*提示气泡内容*/
+
+/*提示气泡*/
+
+/*提示标题*/
+.operation-tip .tip-title {
+    top: 20px;
+    text-align: center;
+}
+
+.operation-tip i {
+    color: #1d9f75;
+    margin-right: 10px;
+}
+
+/*提示标题*/

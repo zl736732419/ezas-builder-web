@@ -1,0 +1,94 @@
+/*
+    幽灵边框效果纯css实现
+    使用方式
+    1.加载css文件样式
+    <link ref="stylesheet" type="text/css" href="app/css/ghost.border.css">
+
+    2.html代码编写
+    <div class="lines">
+        <span class="line line-top"></span>
+        <span class="line line-right"></span>
+        <span class="line line-bottom"></span>
+        <span class="line line-left"></span>
+        other html content...
+    </div>
+*/
+.lines {
+    position: relative;
+    padding: 10px 0 10px 50px;
+    margin-bottom: 20px;
+    background-color: white;
+    font-size: 15px;
+    color: #7f8fa4;
+    border: 2px solid rgba(13,147,156, 0.6);
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.lines:hover {
+    border: 2px solid rgba(13, 147, 156, 0.8);
+}
+
+.line {
+    position: absolute;
+    background-color: rgba(13, 147, 156, 0.8);
+    -webkit-transition: .3s ease-in-out;
+       -moz-transition: .3s ease-in-out;
+         -o-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+}
+
+/*绘制上边(从左到右)*/
+.line-top {
+    left: -120%;
+    top: -2px;
+    width: 0;
+    height: 2px;
+}
+
+.lines:hover .line-top {
+    left: -2px;
+    width: 100%;
+}
+
+
+/*绘制右边(从上到下)*/
+.line-right {
+    right: -2px;
+    top: -120%;
+    width: 2px;
+    height: 0;
+}
+
+.lines:hover .line-right {
+    top: -2px;
+    height: 100%;
+}
+
+/*绘制下边(从左到右)*/
+.line-bottom {
+    left: 120%;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+}
+
+.lines:hover .line-bottom {
+    left: -2px;
+    width: 100%;
+}
+
+/*绘制左边(从下到上)*/
+.line-left {
+    left: -2px;
+    bottom: -120%;
+    width: 2px;
+    height: 0;
+}
+
+.lines:hover .line-left {
+    bottom: -2px;
+    height: 100%;
+}

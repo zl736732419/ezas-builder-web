@@ -1,0 +1,93 @@
+/*分页组件样式*/
+.pager-panel,
+.pager-panel .btn {
+     font-size: 12px;
+}
+
+.pager-panel .pagination {
+    float: left;
+}
+
+.pager-panel .pagination li.active a {
+    color: white !important;
+}
+
+.pager-panel .pagination li.active a {
+    background-color: #59c7f9 !important;
+    border-color: #59c7f9;
+}
+
+.pager-panel .pagination li.disabled a {
+    color: #bbb !important;
+    background-color: #fff !important;
+    border-color: #ccd5db !important;
+}
+
+.pager-panel .pagination {
+    margin-top: 35px;
+    margin-bottom: 0;
+}
+
+.pager-panel .pagination a {
+    color: #76838f;
+}
+
+.pager-panel a:hover {
+    background-color: #59c7f9 !important;
+    border-color: #59c7f9 !important;
+    color: white !important;
+}
+
+.pager-panel div {
+    display: inline-block;
+    margin: 35px 0 0 0;
+    float: left;
+}
+
+.pager-panel .jump-panel {
+    position: relative;
+    margin-left: 10px;
+    height: 31px;
+}
+
+.pager-panel .jump-panel .page-text {
+    position: relative;
+    display: inline-block;
+    line-height: 31px;
+}
+
+.pager-panel .jump-panel .page-info {
+    margin-left: 20px;
+}
+
+
+.pager-panel .jump-panel .jump-page {
+    font-size: 12px;
+    text-align: center;
+    border-radius: 3px;
+    line-height: 31px;
+    background-color: #F7F7F7;
+    width: 31px;
+    height: 31px;
+    margin: 0 5px;
+    box-shadow: inherit;
+    border: 1px solid #ccd5db;
+    outline: 0!important;
+    transition: border linear .2s,box-shadow linear .2s;
+}
+
+.pager-panel .jump-panel .jump-page:focus {
+    border-color: #59c7f9;
+}
+
+.pager-panel .page-jump {
+    border-color: #ccd5db;
+    padding: 5px 12px;
+}
+
+.pager-panel .page-jump:visited,
+.pager-panel .page-jump:link {
+    background-color: white;
+    color: #76838f;
+    outline:none;
+}
