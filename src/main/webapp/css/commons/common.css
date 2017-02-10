@@ -2,8 +2,8 @@
 /*答题卡样式*/
 body {
 	font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
-	color: #76838f;
 	font-size: 14px;
+	color: #76838f;
     background-color: #f2f2f2;
 	overflow: hidden;
 }
@@ -83,13 +83,21 @@ a:visited {
 }
 
 .noRightPadding {
-	padding-right: 0;
+	padding-right: 0 !important;
 }
 
 .noLeftPadding {
-	padding-left: 0;
+	padding-left: 0 !important;
 }
 
 .center {
 	text-align: center !important;
+}
+
+.labelTip {
+    font-size: 14px !important;
+}
+
+.label-important {
+    color: #8a6d3b !important;
 }

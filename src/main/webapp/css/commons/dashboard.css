@@ -1,0 +1,40 @@
+/*操作步骤导航栏样式*/
+.step-bar {
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 4px solid #99CCCC;
+}
+
+.step-order-num {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin-right: 20px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+
+    background-color: #66CCFF;
+    line-height: 50px;
+    font-size: 28px;
+    text-align: center;
+    color: #fff;
+}
+
+.step-tip {
+    font-size: 20px;
+    font-weight: bolder;
+}
+/*操作步骤导航栏样式 end*/
+/*快捷设置提示*/
+.tip-content {
+    font-size: 16px;    
+}
+
+.tip-title {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 5px;
+}
+/*快捷设置提示 end*/

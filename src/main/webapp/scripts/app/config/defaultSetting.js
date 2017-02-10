@@ -7,7 +7,7 @@
 (function() {
     "use strict";
     
-    define(['utils', 'colors', 'settings'], function(utils, colors, settings) {
+    define(['settings'], function(settings) {
         return {
             unit: 'mm', //单位毫米
             lineWidth: 0.14, //线宽
@@ -21,13 +21,13 @@
                 pageNum: 1, // 答题卡共几页(一张两面算两页)
                 sheetType: 2, // 题卡纸张类型，1：A3， 2：A4
                 a3Column: 3, //默认A3是3栏
-                omrSize: utils.settings.constant.OMR_SIZE_BIGGER, //默认为大号omr区
+                omrSize: settings.constants.OMR_SIZE_BIGGER, //默认为大号omr区
                 printType: 1, //单面打印 1， 双面打印 2
                 copyRight: 1, //版权信息
                 gridType: 1, //方格类型
                 isRed: false, //是否是套红卡
-                color: colors.COLOR_GRAY, //默认为黑白卡
-                textColor: colors.COLOR_BLACK,
+                color: settings.colors.COLOR_GRAY, //默认为黑白卡
+                textColor: settings.colors.COLOR_BLACK,
                 enableHideSync: true, //是否隐藏无用的垂直同步头，通过右键题卡菜单设置
                 sheetsHideVerHeaderIndexs: [], //当前需要隐藏的题卡垂直同步头索引
                 fontFamily: "myFont, FreesiaUPC, 'Angsana New','Courier New', Calibri, SimSun, 'Times New Roman'",
@@ -100,20 +100,10 @@
                 zkzhCount: 14, //准考证号位数
                 changeToStuMin: false, //A3，并且准考证号达到最大16位，需要将填涂要求、缺考违纪元素位置进行调整，在stu中修改
                 minStuHorHeaderNum: 0, //记录最小的考生信息水平同步头个数
-                codeType: utils.settings.constant.CODE_TYPE_ZKZH, //默认为准考证号标识
-                sheetABType: utils.settings.constant.SHEET_TYPE_NULL,
+                codeType: settings.constants.CODE_TYPE_ZKZH, //默认为准考证号标识
+                sheetABType: settings.constants.SHEET_TYPE_NULL,
                 enableSheetABType: false, //默认是不开启AB卷的
                 usedVerHeaderNum: 0, //获取基本元素中的最大垂直同步头，(左侧学生填写的字段(姓名、填涂要求、AB卷)与右侧准考证号的比较得出最大值)
-            },
-            studentInfo: { //考生基本信息
-//			stu: { //学生基本信息，程序用于自动填涂,没有则为null
-//				name: '张三',
-//				grade: '六年级',
-//				clazz: '3班',
-//				school: '南山中学',
-//				id: '12345678987654'
-//			}
-                stu: null
             },
             composition: { //作文区
                 width: 7, //方格宽高2*(垂直同步头+gap)
@@ -123,9 +113,6 @@
                 en: {
                     lineHeight: 8.5  // 3同步头+2间隙
                 }
-            },
-            footer: {
-                content: settings.footer.content
             }
         };
     });

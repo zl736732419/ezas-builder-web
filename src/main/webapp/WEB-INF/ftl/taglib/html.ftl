@@ -9,7 +9,7 @@
 		</#list>
 	</head>
 	<#compress>
-	<body class="<#if scroll="true">ez-nicescroll</#if>" entry="${entryjs}" jsMethod="${jsMethod}" rootPath="${request.contextPath}/">
+	<body class="<#if scroll="true">ezas-nicescroll</#if>" entry="${entryjs}" jsMethod="${jsMethod}" rootPath="${request.contextPath}/">
 	  <#nested >
 	</body>
 	</#compress>

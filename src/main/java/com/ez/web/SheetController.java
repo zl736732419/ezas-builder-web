@@ -9,9 +9,22 @@ import com.ez.commons.web.ModelAndViewFactory;
 @Controller
 @RequestMapping("/sheet")
 public class SheetController {
-
-	@RequestMapping("/")
+	
+	/**
+	 * 跳转到首页基本信息设置界面
+	 * @return
+	 */
+	@RequestMapping("/index")
 	public ModelAndView index() {
 		return ModelAndViewFactory.newModelAndViewFor("make/index").build();
+	}
+	
+	/**
+	 * 跳转到题卡头信息设置界面
+	 * @return
+	 */
+	@RequestMapping("/headerSetting") 
+	public ModelAndView headerSetting() {
+		return ModelAndViewFactory.newModelAndViewFor("make/headerSetting").build(); 
 	}
 }

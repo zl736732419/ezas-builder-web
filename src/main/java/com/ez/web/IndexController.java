@@ -9,8 +9,9 @@ import com.ez.commons.web.ModelAndViewFactory;
 @Controller
 @RequestMapping("/")
 public class IndexController {
-	@RequestMapping("/index")
-	public ModelAndView index() {
-		return ModelAndViewFactory.newModelAndViewFor("index").build();
+	
+	@RequestMapping("")
+	public String index() {
+		return "redirect:sheet/index";
 	}
 }

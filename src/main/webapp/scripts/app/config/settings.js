@@ -4,7 +4,7 @@
 (function() {
     'use strict';
     
-    define(function() {
+    define([], function() {
         var subjects = [
             {name: '语文', value: 1},    // 语文
             {name: '英语', value: 2},   // 英语
@@ -16,7 +16,7 @@
             {name: '地理', value: 8}, //地理
             {name: '生物', value: 9},   //生物
             {name: '文综', value: 10},   //文综
-            {name: '理综', value: 11},   //理综
+            {name: '理综', value: 11}   //理综
         ];
         
         //控件类型
@@ -108,7 +108,8 @@
              * 页脚
              */
             footer : {
-                copyright: '深圳市易考乐学测评有限公司制作',
+                // copyright: '深圳市易考乐学测评有限公司制作',
+                copyright: '武汉市天喻教育科技有限公司制作',
                 page: '第  ${curPage} 面'
             },
             /**
@@ -184,10 +185,7 @@
             colors: colors,
             keyCodes: keyCodes,
             compositionWordCount: compositionWordCount,
-            operation: operation,
-            
+            operation: operation
         };
-        
     });
-    
 })();

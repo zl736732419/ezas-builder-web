@@ -147,47 +147,44 @@ var config = {
     baseUrl: window.app.rootPath + 'static/scripts/',
     optimize: 'none',
     paths: {
-        jquery: jqueryPath,
-        bootstrap : "lib/bootstrap/bootstrap.min",
-        select : "lib/bootstrap/plugins/select/bootstrap-select.min",
-        datapicker : "lib/bootstrap/plugins/bootstrap-datetimepicker",
-        fwBootstrap : "lib/bootstrap/plugins/formValidation/framework/bootstrap",
-        formValidation : "lib/bootstrap/plugins/formValidation/formValidation",
-        icheck : "lib/bootstrap/plugins/iCheck/icheck.min",
-        bootstrapSlider : "lib/bootstrap/plugins/bootstrap-slider/bootstrap.slider.v4",
-        lodash:"lib/lodash/lodash.min",
-        nicescroll:"lib/jquery/nicescroll/jquery.nicescroll",
-        cookie : "lib/jquery/cookie/jquery.cookie",
+        "jquery": jqueryPath,
+        "bootstrap" : "lib/bootstrap/bootstrap.min",
+        "select" : "lib/bootstrap/plugins/select/bootstrap-select.min",
+        "datapicker" : "lib/bootstrap/plugins/bootstrap-datetimepicker",
+        "formValidation" : "lib/bootstrap/plugins/formValidation/formValidation",
+        "fwBootstrap" : "lib/bootstrap/plugins/formValidation/framework/bootstrap",
+        "lodash":"lib/lodash/lodash.min",
+        "nicescroll":"lib/jquery/nicescroll/jquery.nicescroll",
+        "cookie" : "lib/jquery/cookie/jquery.cookie",
+
         //config
-        settingsA3: 'app/config/defaultSetting-a3',
-        settingsA4: 'app/config/defaultSetting-a4',
-        settings8K: 'app/config/defaultSetting-8k',
-        settings16K: 'app/config/defaultSetting-16k',
-        settings: 'app/config/defaultSetting',
-        cacheConfig: 'app/config/cacheConfig',
+        "settingsA3": "app/config/defaultSetting-a3",
+        "settingsA4": "app/config/defaultSetting-a4",
+        "settings8K": "app/config/defaultSetting-8k",
+        "settings16K": "app/config/defaultSetting-16k",
+        "defaultSetting": "app/config/defaultSetting",
+        "settings": "app/config/settings",
+        "cacheConfig": "app/config/cacheConfig",
+
         //utils
-        logger:"utils/logger",
-        ajaxwrapper: 'utils/ajaxwrapper',
-        download: 'utils/download',
-        eventBuilder: 'utils/eventBuilder',
-        formToJson:"utils/formToJson",
-        uiBuilder: 'utils/uiBuilder',
-        uiwrapper: 'utils/uiwrapper',
-        bubbleTip: 'utils/bubbleTip',
-        
-        
-        
+        "logger":"utils/logger",
+        "ajaxwrapper": "utils/ajaxwrapper",
+        "download": "utils/download",
+        "eventBuilder": "utils/eventBuilder",
+        "formToJson":"utils/formToJson",
+        "uiBuilder": "utils/uiBuilder",
+        "uiwrapper": "utils/uiwrapper",
+        "bubbleTip": "utils/bubbleTip"
     },
     shim: {
         'bootstrap': {deps:['jquery']},
         'select': {deps:['bootstrap']},
-        'icheck': {deps:['bootstrap']},
         'formValidation': {deps:['bootstrap']},
         'fwBootstrap': {deps:['formValidation']},
         'nicescroll': {deps:['jquery']},
-        'datapicker': {deps:['jquery','bootstrap']},
+        'datapicker': {deps:['bootstrap']},
         'logger': {deps: ['jquery']},
-        'formToJosn': {deps:['jquery']}
+        'formToJson': {deps:['jquery']}
     }
 };
 

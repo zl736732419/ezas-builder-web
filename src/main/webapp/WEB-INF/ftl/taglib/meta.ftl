@@ -27,6 +27,7 @@
 
 <link rel="stylesheet" href="${request.contextPath}/static/css/commons/bubbleTip.css"/>
 <link rel="stylesheet" href="${request.contextPath}/static/css/commons/common.css"/>
+<link rel="stylesheet" href="${request.contextPath}/static/css/commons/dashboard.css"/>
 <link rel="stylesheet" href="${request.contextPath}/static/css/commons/dialog.css"/>
 <link rel="stylesheet" href="${request.contextPath}/static/css/commons/elementDragDiv.css"/>
 <link rel="stylesheet" href="${request.contextPath}/static/css/commons/elementResize.css"/>
