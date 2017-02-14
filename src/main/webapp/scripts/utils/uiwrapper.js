@@ -4,7 +4,31 @@
 (function() {
     'use strict';
     
-    define(['jquery', 'logger', 'select', 'nicescroll', 'datapicker', 'formValidation', 'fwBootstrap'], function($, logger) {
+    define(['jquery', 'logger', 'toastr', 'alertify', 'select', 'nicescroll', 
+        'datapicker', 'formValidation', 'fwBootstrap'], function($, logger, toastr, alertify) {
+
+        //对某些组件进行初始化
+        function init() {
+            //初始化toastr
+            if (typeof toastr != "undefined") {
+                toastr.options = {
+                    "closeButton" : true, //是否显示关闭按钮
+                    "positionClass" : "toast-top-center",//弹出窗的位置
+                    "timeOut" : "2000", //展现时间
+                };
+            }
+
+            //设置alertify插件按钮文本
+            alertify.set({
+                labels: {
+                    ok: "确定",
+                    cancel: "取消"
+                }
+            });
+        }
+        
+        init();
+        
         return {
             /**
              * 表单验证器
@@ -123,6 +147,58 @@
 
                 if(getBrowser().isMobile()){
                     $html.find('select.selectpicker').selectpicker('mobile');
+                }
+            },
+            /**
+             * toastr弹出提示框，使用方式：toastr.config(opts).bindHiddenEvent(fn).success(msg)
+             */
+            toastr: {
+                info: function(msg) {
+                    toastr.info(msg);
+                },
+                success: function(msg) {
+                    toastr.success(msg);
+                },
+                warning: function(msg) {
+                    toastr.warning(msg);
+                },
+                /**
+                 * 可以设置的参数
+                 * closeButton" : true, //是否显示关闭按钮
+                 " positionClass" : "toast-top-center",//弹出窗的位置参考toastr.css
+                 " timeOut" : "2000", //展现时间
+                 * @param opts
+                 * @returns {jquery}
+                 */
+                config: function(opts) {
+                    if(null != opts && undefined != opts && 'object' === typeof(opts)) {
+                        $.extend(true, toastr.options, opts);
+                    }
+                    return this;
+                },
+                bindHiddenEvent: function(callback) {
+                    toastr.options.onHidden = callback;
+                    return this;
+                }
+            },
+            /**
+             * alertifyAlert 弹出框
+             */
+            alertify: {
+                alert: function(msg, fn) {
+                    alertify.alert(msg, fn);
+                },
+                confirm: function(msg, fn) {
+                    alertify.confirm(msg, fn);
+                },
+                prompt: function(msg, fn) {
+                    alertify.prompt(msg, fn);
+                },
+                success: function(msg, timeout) {
+                    alertify.success(msg, timeout);
+                },
+                error: function(msg, timeout) {
+                    alertify.error(msg, timeout);
                 }
             }
         };

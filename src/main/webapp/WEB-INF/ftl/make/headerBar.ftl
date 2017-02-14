@@ -1,5 +1,5 @@
 <!--顶部工具栏-->
-<#macro headerBar title="" elements=[] btns=[]>
+<#macro headerBar title="" showPreview="true" elements=[] btns=[]>
 <!--
 <div class="headerPanel">
 	<div class="headerLogo pull-left">
@@ -48,8 +48,7 @@
 
         <div class="collapse navbar-collapse" id="headerBar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="saveBtn" href="javascript:void(0)" title="保存"><span class="fa fa-floppy-o"></span></a></li>
-                <li><a class="previewBtn" href="javascript:void(0)" title="预览"><span class="fa fa-eye"></span></a></li>
+                <li class="previewBtn" style="display:<#if showPreview="true">block<#else>none</#if>"><a href="javascript:void(0)" title="预览"><span class="fa fa-eye"></span></a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

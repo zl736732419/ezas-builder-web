@@ -156,7 +156,9 @@ var config = {
         "lodash":"lib/lodash/lodash.min",
         "nicescroll":"lib/jquery/nicescroll/jquery.nicescroll",
         "cookie" : "lib/jquery/cookie/jquery.cookie",
-
+        "toastr": "lib/jquery/toastr/toastr.min",
+        "alertify": "lib/jquery/alertify/alertify.min",
+        
         //config
         "settingsA3": "app/config/defaultSetting-a3",
         "settingsA4": "app/config/defaultSetting-a4",
@@ -175,6 +177,8 @@ var config = {
         "uiBuilder": "utils/uiBuilder",
         "uiwrapper": "utils/uiwrapper",
         "bubbleTip": "utils/bubbleTip"
+        
+        
     },
     shim: {
         'bootstrap': {deps:['jquery']},
@@ -190,7 +194,7 @@ var config = {
 
 requirejs.config(config);
 
-require(['jquery'], function($) {
+require(['jquery', 'toastr', 'alertify'], function($, toastr, alertify, examPapers) {
     
     var p = ['app/' + window.app.entryjs];
     require(p, function(module) {

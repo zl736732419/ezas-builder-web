@@ -24,6 +24,9 @@
 <link rel="stylesheet" href="${request.contextPath}/static/css/lib/jquery/jquery-lc-switch/lc_switch.css" />
 <link rel="stylesheet" href="${request.contextPath}/static/css/lib/jquery/jquery.smartMenu/smartMenu.css" />
 <link rel="stylesheet" href="${request.contextPath}/static/css/lib/jquery/jquery.uploadify/css/uploadify.css" />
+<link rel="stylesheet" href="${request.contextPath}/static/css/lib/jquery/toastr/toastr.min.css" />
+<link rel="stylesheet" href="${request.contextPath}/static/css/lib/jquery/alertify/themes/alertify.core.css" />
+<link rel="stylesheet" href="${request.contextPath}/static/css/lib/jquery/alertify/themes/alertify.default.css" />
 
 <link rel="stylesheet" href="${request.contextPath}/static/css/commons/bubbleTip.css"/>
 <link rel="stylesheet" href="${request.contextPath}/static/css/commons/common.css"/>

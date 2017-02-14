@@ -6,8 +6,8 @@
             <#if showBtnGroups=true >
                 <@formGroup>
                     <div class="col-xs-10 col-xs-offset-1 col-md-9 col-md-offset-1 col-lg-8 col-lg-offset-2 form-edit-control" style="text-align:center;">
-                        <button type="${saveBtn}" class="btn btn-success" id="savebtn">保存</button>
-                        <button type="button" class="btn btn-info" id="cancelbtn">完成</button>
+                        <button type="${saveBtn}" class="btn btn-success savebtn" >保存</button>
+                        <button type="button" class="btn btn-info finishbtn">完成</button>
                     </div>
                 </@formGroup>
             </#if>

@@ -4,8 +4,8 @@
 </#macro>
 
 <#--内容栏-->
-<#macro content class="">
-    <div class="container ${class}">
+<#macro container class="">
+    <div id="container" class="container ${class}">
         <#nested >
     </div>
 </#macro>

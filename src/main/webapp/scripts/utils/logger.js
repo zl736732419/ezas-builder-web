@@ -1,11 +1,11 @@
 (function () {
-	define(["jquery"], function ($) {
+	define([], function () {
 		var self = {
-			log : function (msg) {
+			log: function (msg) {
 				if (window.console) {
 					console.log(msg);
 				}
-			}
+			},
 		};
 		
 		return self;
