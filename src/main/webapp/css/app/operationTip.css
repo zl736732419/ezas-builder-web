@@ -3,12 +3,13 @@
     bottom: 0px;
     left: 0;
     z-index: 100;
+    font-size: 14px !important;
 }
 
 .operation-tip .tip-container {
 	display: none;
 	position: absolute;
-	bottom: 40px;
+	top: 20px;
 	left:  0;
 }
 
@@ -27,7 +28,7 @@
 }
 
 .operation-tip .tip-bubble {
-    margin-left: 100px;
+    margin-left: 50px;
 }
 /*提示图标*/
 
@@ -49,7 +50,7 @@
 }
 
 .operation-tip .tip-panel {
-    top:80px;
+    bottom: 110px;
 }
 
 /*设置气泡动画*/
@@ -81,7 +82,7 @@
 }
 
 .operation-tip .tip-container.active ellipse#large1 {
-    transition-delay: 0;
+    transition-delay: 0s;
 }
 
 .operation-tip .tip-container.active ellipse#large2 {
@@ -117,7 +118,7 @@
 
 /*提示标题*/
 .operation-tip .tip-title {
-    top: 20px;
+    top: 120px;
     text-align: center;
 }
 

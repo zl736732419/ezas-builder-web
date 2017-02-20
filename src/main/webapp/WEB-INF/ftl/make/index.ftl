@@ -4,7 +4,10 @@
 <#include "headerSetting.ftl" />
 <#import "../taglib/commons/dashboard.ftl" as dashboard/>
 <#import "../taglib/commons/form.ftl" as form/>
-<#assign css=['header', 'index', 'jquery.jscrollpane.custom', 'bookblock', 'custom']>
+<#assign css=['header', 'index', 'popover.custom', 'jquery.jscrollpane.custom', 'bookblock', 'custom']>
+<#assign btns=[
+{'class': 'logout-btn', 'icon_class': 'glyphicon glyphicon-log-out', 'icon_label': '退出'}
+]>
 
 <#macro content>
 <div class="bb-custom-wrapper">
@@ -31,7 +34,7 @@
 
 <@html entryjs="index" jsMethod="render" css=css title="题卡制作" scroll="true">
 <#--头部信息-->
-    <@headerBar title="题卡制作" showPreview="false"/>
+    <@headerBar title="题卡制作" btns=btns/>
     <@dashboard.blankbar/>
 
     <@dashboard.container>

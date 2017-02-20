@@ -68,20 +68,20 @@
             <@layout class="attentionArea" headerCls="label-important" title="注意事项区">
                 <@form.checkbox id="attentionNote" name="attentionNote" value="attentionNote" text="启用" checked="true" />
                 <a class="attentionNoteBtn mytooltip" href="javascript:void(0)"
-                   data-toggle="tooltip" data-container="body"
-                   data-placement="top" title="修改">修改</a>
+                   data-toggle="popover">修改</a>
             </@layout>
         </div>
     </@form.edit>
 
     <@dashboard.blankbar />
-<#--操作提示-->
+    <#--操作提示-->
     <@dashboard.tip>
         <strong><span class="fa fa-info-circle fa-2x"></span><span class="tip-title">快捷设置：</span></strong>
         只需选择<strong><span class="text text-warning">基本信息</span></strong>、
         <strong><span class="text text-warning">考生标识</span></strong>
         并修改<strong><span class="text text-warning">注意事项</span></strong>
-        即可完成设置.<br/>您可以通过右上角的<strong><span class="text text-warning">预览</span></strong>按钮实时预览题卡生成的效果哦~~~
+        即可完成设置.<br/>通过左上角的<strong><span class="text text-warning fa fa-eye"></span></strong>按钮开始设计题卡哦~~~
     </@dashboard.tip>
 </div>
+
 </#macro>

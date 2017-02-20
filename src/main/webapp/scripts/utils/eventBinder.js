@@ -14,8 +14,8 @@
              * @param callback 回调函数
              */
             bindEvent: function(ui, event, callback) {
-                var tagName = $(ui)[0].tagName;
-                logger.log('为%s添加事件%s...', tagName, event);
+                var target = $(ui)[0].tagName + '[class=' + $(ui).attr('class') + ']';
+                logger.log('为'+target+'添加事件'+event+'...');
                 $(ui).off(event).on(event, function(e) {
                     return callback && callback(e, this);
                 })

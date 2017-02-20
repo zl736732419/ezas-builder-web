@@ -1,36 +1,5 @@
 <!--顶部工具栏-->
-<#macro headerBar title="" showPreview="true" elements=[] btns=[]>
-<!--
-<div class="headerPanel">
-	<div class="headerLogo pull-left">
-		<a href="javascript:void(0)"> <img
-			src="${request.contextPath}/static/css/images/header_logo.png"> <span class="logoLabel">${title}</span>
-		</a>
-	</div>
-	<div class="headerListPanel">
-        <ul class="headerList">
-			<#list elements as element>
-                <li class="headerItem ${element.cls}" dialog="${element.dialog}">
-                    <a href="javascript:void(0)">
-                        <img src="${request.contextPath}/static/css/images/${element.icon}" />
-                        <span class="answerLabel">${element.label}</span>
-                    </a>
-                </li>
-			</#list>
-        </ul>
-	</div>
-	<div class="operatorPanel pull-right">
-		<div class="opt-parent">
-			<#list btns as btn>
-                <a href="${btn.url}" target="_blank" class="btn btn-success btn-sm ${btn.cls}">${btn.label}</a>
-			</#list>
-			<a href="sheet/list" target="_blank" class="btn btn-success btn-sm opt-btn">题卡管理</a>
-			<a href="logout" target="_self" class="btn btn-danger btn-sm opt-btn">退出</a>
-		</div>
-	</div>
-</div>
--->
-
+<#macro headerBar title="" elements=[] btns=[]>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -47,12 +16,30 @@
         </div>
 
         <div class="collapse navbar-collapse" id="headerBar">
+            
+            <ul class="nav navbar-nav element-layout">
+                <#list elements as element >
+                    <li class="btn-item ${element.class} element-item" title="${element.icon_label}" data-toggle="tooltip" data-placement="bottom">
+                        <a href="javascript:void(0)">
+                            <span class="${element.icon_class}"></span>
+                        </a>
+                        <span class="icon-label">${element.icon_label}</span>
+                    </li>
+                </#list>
+            </ul>
+            
             <ul class="nav navbar-nav navbar-right">
-                <li class="previewBtn" style="display:<#if showPreview="true">block<#else>none</#if>"><a href="javascript:void(0)" title="预览"><span class="fa fa-eye"></span></a></li>
+                <#list btns as btn >
+                    <li class="btn-item ${btn.class}" title="${btn.icon_label}" data-toggle="tooltip" data-placement="bottom">
+                        <a href="javascript:void(0)">
+                            <span class="${btn.icon_class}"></span>
+                        </a>
+                        <span class="icon-label">${btn.icon_label}</span>
+                    </li>
+                </#list>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-
 <!--顶部工具栏 end-->
 </#macro>

@@ -5,13 +5,77 @@
 (function () {
     "use strict";
 
-    define(['jquery', 'logger', 'uiwrapper', 'settings', 'defaultSetting', 'formToJson'],
-        function ($, logger, ui, settings, defaultSetting) {
+    define(['jquery', 'logger', 'uiwrapper', 'settings', 'defaultSetting', '../utils/popover.custom', 'formToJson'],
+        function ($, logger, ui, settings, defaultSetting, popover) {
             
+            var rendered = false; //是否已经渲染过
+        
             var examPapers = null; //从首页传递过来
         
             var zkzhMaxCount = 16; //学生准考证号最大位数
 
+            //修改注意事项popover
+            function renderUpdateAttention() {
+                var title = '<b>修改注意事项</b> &emsp;(使用"|"表示换行符)';
+                var content = '<form id="updateAttentionNotePopForm" class="form-horizontal">\
+                                    <div class="form-group" style="margin-left:0; margin-right:0;">\
+                                        <textarea id="updateAttentionNote" name="attentionNote" class="attentionNote form-control"\
+                                            rows="8" style="padding:10px;"></textarea>\
+                                    </div>\
+                                </form>';
+                var inputs = ['#updateAttentionNote'];
+                var config = {
+                    pop_btn: 'a.attentionNoteBtn',
+                    title: title,
+                    content: content,
+                    inputs: inputs,
+
+                    onShownEvent: popShownEvent,
+                    onOkEvent: popOkEvent
+                };
+                popover.config(config).init();
+            }
+
+            function popShownEvent() {
+                var attentionNote = settings.baseInfo.attentionNote;
+                $('#updateAttentionNote').val(attentionNote);
+                var tipObj = popover.getTipObj();
+                //获取popover中的textarea设置显示的值
+                $(tipObj).find('#updateAttentionNote').val(attentionNote);
+                
+                var $form = $(tipObj).find('#updateAttentionNotePopForm');
+                
+                ui.formValidator.validate($form, {
+                    'attentionNote': {
+                        validators: {
+                            notEmpty: {
+                                message: '注意事项不能为空!'
+                            },
+                            stringLength: {
+                                max: 127,
+                                message: '不能超过127个字符!'
+                            }
+                        }
+                    }
+                });
+            }
+
+            function popOkEvent() {
+                var tipObj = popover.getTipObj();
+                var $form = $(tipObj).find('#updateAttentionNotePopForm');
+                var valid = ui.formValidator.isFormValid($form);
+                
+                if(valid) {
+                    var attentionNote = $('#updateAttentionNote').val();
+                    settings.baseInfo.attentionNote = attentionNote;
+                    ui.toastr.success('注意事项修改成功!');
+                } else {
+                    ui.toastr.warning('请按要求填写注意事项!');
+                }
+                
+                return valid;
+            }
+            
             // 根据首页选择的题卡omr大小号确定考生准考证号最大位数
             function initMaxzkzhCount() { 
                 logger.log('init max zkzh count');
@@ -38,18 +102,19 @@
                 });
             }
 
-            //这里显示预览按钮
-            function showPreviewBtn() {
-                logger.log('show preview btn');
-                $('.previewBtn').css({
-                    display: 'block'
-                });
-            }
-            
+            //渲染页面表单数据
             function renderFormValues() {
                 var headerSetting = examPapers.tempConfig.headerSetting;
                 if(!$.isEmptyObject(headerSetting)) {
-                    //TODO 
+                    var $form = $('#headerSettingForm');
+                    $form.find('#clazzName')[0].checked = (undefined != headerSetting.clazzName);
+                    $form.find('input[name=stuInfo][value=' + headerSetting.stuInfo + ']')[0].checked=true;
+                    $form.find('input[name=sheetABType][value=' + headerSetting.sheetABType + ']')[0].checked=true;
+                    $form.find('input[name=studentCode][value=' + headerSetting.studentCode + ']')[0].checked=true;
+                    $form.find('#zkzhCount').val(headerSetting.zkzhCount);
+                    $form.find('#wrongFilling')[0].checked = (undefined != headerSetting.wrongFilling);
+                    $form.find('input[name=absentAndTag][value=' + headerSetting.absentAndTag + ']')[0].checked=true;
+                    $form.find('#attentionNote')[0].checked = (undefined != headerSetting.attentionNote);
                 }
             }
             
@@ -57,7 +122,6 @@
             function renderContent() {
                 initMaxzkzhCount();
                 initSheetABTypePanel();
-                renderFormValues();
             }
             
             //添加表单验证
@@ -92,43 +156,25 @@
                 });
             }
             
-            //预览
-            function initPreview() {
-                logger.log('init preview btn event');
-                var $form = $('#headerSettingForm');
-                $('.previewBtn').off('click').on('click', function() {
-                    logger.log('click preview btn');
-                     var valid = ui.formValidator.isFormValid($form);
-                     if(!valid) {
-                         ui.toastr.warning('请正确填写表单信息!');
-                         return;
-                     }
-                     
-                     var data = $form.formToJson();
-                     
-                     $.extend(true, examPapers.tempConfig.headerSetting, data);
-                     //TODO preview answerSheet
-                    
-                });
-            }
-            
             // 初始化事件
             function initEvent() {
                 logger.log('init event...');
                 initValidation();
                 initMouseHover();
-                initPreview();
             }
 
             return {
                 render: function (examPaperSettings) {
-                    logger.log('render');
-                    ui.pretty($('body'));
-                    
-                    examPapers = examPaperSettings;
-                    showPreviewBtn();
+                    if(!rendered) {
+                        logger.log('render');
+                        examPapers = examPaperSettings;
+                        renderUpdateAttention();
+                    }
+
                     renderContent();
                     initEvent();
+                    renderFormValues();
+                    rendered = true;
                 }
             };
 

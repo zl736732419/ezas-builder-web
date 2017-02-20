@@ -1,6 +1,6 @@
 <#--分隔符-->
 <#macro blankbar>
-<div style="margin-top:60px;"></div>
+<div class="blank-bar"></div>
 </#macro>
 
 <#--内容栏-->

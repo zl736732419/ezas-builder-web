@@ -1,4 +1,5 @@
 /**
+ * 整个科目的题卡包对象
  * Created by dell on 2017/2/10.
  */
 (function() {

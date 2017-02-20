@@ -30,28 +30,28 @@
 
 /* arrow-effect */
 .arrow-left {
-    border-left: 20px solid #3c3c3c;
+    border-left: 20px solid #1E2021;
     border-top: 20px solid #EEE;
 }
 
 .arrow-right {
-    border-right: 20px solid #3c3c3c;
+    border-right: 20px solid #1E2021;
     border-top: 20px solid #EEE;
 }
 
 .arrow-top-left {
     border-left: 20px solid #EEE;
-    border-top: 20px solid #3c3c3c;
+    border-top: 20px solid #1E2021;
 }
 
 .arrow-top-right {
     border-right: 20px solid #EEE;
-    border-top: 20px solid #3c3c3c;
+    border-top: 20px solid #1E2021;
 }
 
 .arrow-bottom {
     border-left: 20px solid #EEE;
-    border-bottom: 20px solid #3c3c3c;
+    border-bottom: 20px solid #1E2021;
 }
 
 .bubble-box .wrap {

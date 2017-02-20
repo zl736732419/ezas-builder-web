@@ -1,0 +1,17 @@
+.popover {
+    max-width: 300px !important; 
+    width: 300px;
+}
+
+.popover .input-group {
+    width: 100%;
+}
+
+.popover #updateAttentionNote {
+    width: 100%;
+    padding: 0;
+}
+
+.popover .modal-footer {
+    padding: 5px !important;
+}

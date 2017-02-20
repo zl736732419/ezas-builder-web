@@ -30,7 +30,7 @@
                 supportTransitions = Modernizr.csstransitions;
             
             ///////////////////////attrs end
-            self.init = function (fn) {
+            self.init = function (baseSettingCallback, headerSettingCallback) {
                 self.bb = bb = $('#bb-bookblock').bookblock({
                     speed: 800,
                     perspective: 2000,
@@ -48,7 +48,12 @@
                         // destroy jScrollPane on the content div for the old item
                         self.setJSP('destroy', old);
                         
-                        fn && fn.call(); //调用回调函数
+                        //跳转到下一页时需要将examPapers传递
+                        if(current == 0) {
+                            baseSettingCallback && baseSettingCallback.call();
+                        } else if(current == 1){
+                            headerSettingCallback && headerSettingCallback.call();
+                        }
                     }
                 }),
                 

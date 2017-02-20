@@ -29,7 +29,7 @@
 /*操作步骤导航栏样式 end*/
 /*快捷设置提示*/
 .tip-content {
-    font-size: 16px;    
+    font-size: 16px;
 }
 
 .tip-title {
@@ -38,3 +38,9 @@
     margin-left: 5px;
 }
 /*快捷设置提示 end*/
+
+/*空行间隔*/
+.blank-bar {
+    height:50px;
+}
+/*空行间隔 end*/

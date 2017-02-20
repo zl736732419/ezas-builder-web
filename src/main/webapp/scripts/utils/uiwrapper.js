@@ -25,6 +25,18 @@
                     cancel: "取消"
                 }
             });
+
+            //tooltip提示工具
+            var $tooltips = $('[data-toggle="tooltip"]');
+            if($tooltips.length > 0) {
+                $tooltips.tooltip();
+            }
+            
+            //lc_switch工具
+            var $switches = $('.lc_switch');
+            if($switches.length > 0) {
+                $switches.lc_switch('启用', '禁用');
+            }
         }
         
         init();
@@ -161,6 +173,10 @@
                 },
                 warning: function(msg) {
                     toastr.warning(msg);
+                },
+                error: function(msg) {
+                    toastr.error(msg);
+                    throw new Error(msg);  
                 },
                 /**
                  * 可以设置的参数

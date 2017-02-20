@@ -6,9 +6,13 @@
     "use strict";
 
     define(['jquery', 'logger', 'uiwrapper', 'settings', 'defaultSetting', '../lib/bookblock/page', './examPapers', 
-            './headerSetting', 'select', 'formToJson'],
+            './headerSetting', 'ajaxwrapper', 'select', 'formToJson'],
         function ($, logger, ui, settings, defaultSetting, page, examPapers, headerSetting) {
 
+            var id = null; // 题卡id
+        
+            var rendered = false; //是否已经渲染过界面
+        
             // 加载科目信息
             function loadSubjects() {
                 logger.log('load subjects...');
@@ -35,17 +39,13 @@
             //上一步
             function initPrevBtnClick() {
                 var $menuBar = $('.menu-tool-btns');
-                var $form = $('#headerSettingForm');
-                $menuBar.find('#bb-nav-prev').on('click', function () {
+                $menuBar.find('#bb-nav-prev').off('click').on('click', function () {
                     logger.log('prev btn click');
 
-                    //TODO clear form validation
+                    var $form = $('#headerSettingForm');
+                    ui.formValidator.resetForm($form);
                     
                     $menuBar.find('#bb-nav-make').css({
-                        display: 'none'
-                    });
-                    
-                    $('.previewBtn').css({
                         display: 'none'
                     });
                     
@@ -57,7 +57,7 @@
             function initNextBtnClick() {
                 var $menuBar = $('.menu-tool-btns');
                 var $form = $('#baseSettingForm');
-                $menuBar.find('#bb-nav-next').on('click', function () {
+                $menuBar.find('#bb-nav-next').off('click').on('click', function () {
                     logger.log('next btn click');
                     var valid = ui.formValidator.isFormValid($form);
                     if(!valid) {
@@ -72,10 +72,6 @@
                         display: 'inline-block'
                     });
 
-                    $('.previewBtn').css({
-                        display: 'block'
-                    });
-                    
                     page.bb.next();
                 });
             }
@@ -84,7 +80,7 @@
             function initMakeBtnClick() {
                 var $menuBar = $('.menu-tool-btns');
                 var $form = $('#headerSettingForm');
-                $menuBar.find('#bb-nav-make').on('click', function () {
+                $menuBar.find('#bb-nav-make').off('click').on('click', function () {
                     logger.log('make btn click');
 
                     var valid = ui.formValidator.isFormValid($form);
@@ -96,13 +92,12 @@
                     var headerSetting = $form.formToJson();
                     $.extend(true, examPapers.tempConfig.headerSetting, headerSetting);
                     
-                    //TODO 这里需要跳转到制作题卡页面
                     
-                    
+                    //TODO
                     
                 });
             }
-
+            
             //处理工具栏上的按钮事件
             function initMenuBtns() {
                 initMakeBtnStatus();
@@ -115,7 +110,7 @@
             function initValidation() {
                 logger.log('init validation...');
                 ui.formValidator.validate('#baseSettingForm', {
-                    'pageNum': { //最大5张
+                    'num': { //最大5张
                         validators: {
                             notEmpty: {
                                 message: '题卡页数不能为空!'
@@ -137,7 +132,7 @@
                             message: '当前科目不能为空!'
                         }
                     },
-                    'mainTitle': {
+                    'title': {
                         validators: {
                             stringLength: {
                                 max: defaultSetting.title.nums,
@@ -191,24 +186,66 @@
                 initValidation();
                 initUpdateSheetType();
             }
+            
+            // 渲染基本信息设置界面数据
+            function renderBaseSettingData() {
+                baseSetting.render();
+            }
+            
 
-            //渲染考生信息设置页面
-            function renderHeaderSetting() {
+            // 渲染考生信息设置页面数据
+            function renderHeaderSettingData() {
                 headerSetting.render(examPapers);
             }
             
-            return {
-                render: function () {
-                    logger.log('render');
+            //渲染页面表单数据
+            function renderFormValues() {
+                var baseSetting = examPapers.tempConfig.baseSetting;
+                if(!$.isEmptyObject(baseSetting)) {
+                    var $form =$('#baseSettingForm');
                     
-                    //初始化页面翻页效果
-                    page.init(renderHeaderSetting);
-                    ui.pretty($('body'));
+                    var mainTitle = (baseSetting.mainTitle === undefined ? '' : baseSetting.mainTitle);
+                    var subTitle = (baseSetting.subTitle === undefined ? '' : baseSetting.subTitle);
+                    
+                    $form.find('#mainTitle').val(mainTitle);
+                    $form.find('#subTitle').val(subTitle);
+                    
+                    $form.find('select#curSubject').selectpicker('val', baseSetting.curSubject);
+                    $form.find('select#curSubject').selectpicker('refresh');
+                    
+                    $form.find('select#sheetType').selectpicker('val', baseSetting.sheetType);
+                    $form.find('select#sheetType').selectpicker('refresh');
+                 
+                    $form.find('input[name=a3Column][value=' + baseSetting.a3Column + ']')[0].checked=true;
+                    
+                    $form.find('#pageNum').val(baseSetting.pageNum);
+                    
+                    $form.find('input[name=printType][value=' + baseSetting.printType + ']')[0].checked=true;
+                    $form.find('input[name=enableABSheetType][value=' + baseSetting.enableABSheetType + ']')[0].checked=true;
+                    $form.find('input[name=sheetColor][value=' + baseSetting.sheetColor + ']')[0].checked=true;
+                    $form.find('input[name=gridType][value=' + baseSetting.gridType + ']')[0].checked=true;
+                    $form.find('input[name=copyRight]')[0].checked=(undefined != baseSetting.copyRight);
+                    $form.find('input[name=studentTemplateEnable]')[0].checked=(undefined != baseSetting.studentTemplateEnable);
+                }
+            }
+            
+            var baseSetting = {
+                render: function () {
+                    if(!rendered) {
+                        logger.log('render');
+                        //初始化页面翻页效果
+                        page.init(renderBaseSettingData, renderHeaderSettingData);
+                        ui.pretty($('body'));
+                        loadSubjects();
+                    }
 
-                    loadSubjects();
+                    renderFormValues();
                     initEvent();
+                    rendered = true;
                 }
             };
+            
+            return baseSetting;
 
         });
 })();

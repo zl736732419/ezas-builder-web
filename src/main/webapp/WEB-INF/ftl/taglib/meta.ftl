@@ -27,8 +27,8 @@
 <link rel="stylesheet" href="${request.contextPath}/static/css/lib/jquery/toastr/toastr.min.css" />
 <link rel="stylesheet" href="${request.contextPath}/static/css/lib/jquery/alertify/themes/alertify.core.css" />
 <link rel="stylesheet" href="${request.contextPath}/static/css/lib/jquery/alertify/themes/alertify.default.css" />
+<link rel="stylesheet" href="${request.contextPath}/static/css/lib/jquery/jquery-lc-switch/lc_switch.css" />
 
-<link rel="stylesheet" href="${request.contextPath}/static/css/commons/bubbleTip.css"/>
 <link rel="stylesheet" href="${request.contextPath}/static/css/commons/common.css"/>
 <link rel="stylesheet" href="${request.contextPath}/static/css/commons/dashboard.css"/>
 <link rel="stylesheet" href="${request.contextPath}/static/css/commons/dialog.css"/>
@@ -44,6 +44,7 @@
 <link rel="stylesheet" href="${request.contextPath}/static/css/commons/pager.css"/>
 <link rel="stylesheet" href="${request.contextPath}/static/css/commons/tableCmp.css"/>
 <link rel="stylesheet" href="${request.contextPath}/static/css/commons/textCmp.css"/>
+<link rel="stylesheet" href="${request.contextPath}/static/css/commons/animate.min.css"/>
 
 <!--[if IE]>
 <link rel="stylesheet" href="${request.contextPath}/static/css/lib/ie.css"/>

@@ -14,7 +14,7 @@
             settings: {
                 bubble: null,
                 size: {
-                    width: 400,
+                    width: 320,
                     padding: 40 //三角符号与矩形距离40px
                 }
             },

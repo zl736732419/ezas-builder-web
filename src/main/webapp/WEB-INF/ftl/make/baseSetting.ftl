@@ -7,8 +7,8 @@
         <@dashboard.blankbar/>
         <@form.edit id="baseSettingForm" showBtnGroups=false>
             <@form.formGroup>
-                <@form.coln_m labelFor="mainTitle" labelText="考试标题" labelColClass="col-sm-2" divColClass="col-sm-8">
-                    <@form.input  id="mainTitle" name="mainTitle" value=""  placeholder="请输入考试标题"/>
+                <@form.coln_m labelFor="title" labelText="考试标题" labelColClass="col-sm-2" divColClass="col-sm-8">
+                    <@form.input  id="title" name="title" value=""  placeholder="请输入考试标题"/>
                 </@form.coln_m>
             </@form.formGroup>
             <@form.formGroup>
@@ -46,8 +46,8 @@
             </div>
             </@form.formGroup>
             <@form.formGroup>
-                <@form.coln_m labelFor="pageNum" labelText="题卡页数" labelColClass="col-sm-2" divColClass="col-sm-5">
-                    <@form.input id="pageNum" name="pageNum" value="1"  placeholder="请输入题卡页数"/>
+                <@form.coln_m labelFor="num" labelText="题卡页数" labelColClass="col-sm-2" divColClass="col-sm-5">
+                    <@form.input id="num" name="num" value="1"  placeholder="请输入题卡页数"/>
                 </@form.coln_m>
             </@form.formGroup>
             <@form.formGroup>
@@ -74,8 +74,8 @@
             <@form.formGroup>
                 <@form.coln_m labelFor="sheetColor" labelText="题卡颜色" labelColClass="col-sm-2 noTopPadding" divColClass="col-sm-8">
                     <@form.radioGroup radios=[
-                    {'id':'blackSheet', 'name':'sheetColor', 'text':'黑白卡', 'value':'1', 'checked':'true'},
-                    {'id':'redSheet', 'name':'sheetColor', 'text':'套红卡', 'value':'2'}] />
+                    {'id':'blackSheet', 'name':'sheetColor', 'text':'黑白卡(&nbsp;<img alt="" src="${request.contextPath}/static/css/images/black_sheet.png">&nbsp;)', 'value':'1', 'checked':'true'},
+                    {'id':'redSheet', 'name':'sheetColor', 'text':'套红卡(&nbsp;<img alt="" src="${request.contextPath}/static/css/images/red_sheet.png">&nbsp;)', 'value':'2'}] />
                 </@form.coln_m>
             </@form.formGroup>
             <@form.formGroup>

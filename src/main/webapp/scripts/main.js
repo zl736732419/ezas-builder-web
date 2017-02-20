@@ -158,6 +158,7 @@ var config = {
         "cookie" : "lib/jquery/cookie/jquery.cookie",
         "toastr": "lib/jquery/toastr/toastr.min",
         "alertify": "lib/jquery/alertify/alertify.min",
+        "lcSwitch": "lib/jquery/jquery-lc-switch/lc_switch.min",
         
         //config
         "settingsA3": "app/config/defaultSetting-a3",
@@ -172,7 +173,7 @@ var config = {
         "logger":"utils/logger",
         "ajaxwrapper": "utils/ajaxwrapper",
         "download": "utils/download",
-        "eventBuilder": "utils/eventBuilder",
+        "eventBinder": "utils/eventBinder",
         "formToJson":"utils/formToJson",
         "uiBuilder": "utils/uiBuilder",
         "uiwrapper": "utils/uiwrapper",
