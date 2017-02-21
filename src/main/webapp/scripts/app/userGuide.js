@@ -57,7 +57,7 @@
             function initUserGuideStatus() {
                 var userGuideEnable = $.cookie('operation-user-guide-enable');
                 if (typeof(userGuideEnable) === 'undefined') {
-                    $.cookie('operation-user-guide-enable', $.operation.userGuide, {expire: 1});
+                    $.cookie('operation-user-guide-enable', settings.operation.userGuide, {expire: 1});
                 } else {
                     if ("true" === (userGuideEnable + "")) {
                         userGuideEnable = true;

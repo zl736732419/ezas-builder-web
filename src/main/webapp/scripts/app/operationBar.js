@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    define(['jquery', 'logger', './operationTip', '../dialogs/operationDialog', 'eventBinder', 'cookie'], 
+    define(['jquery', 'logger', './operationTip', '../dialogs/operationDialog', 'custom', 'cookie'], 
         function ($, logger, operationTip, operationDialog) {
 
         var $ui = $('.operation-container');

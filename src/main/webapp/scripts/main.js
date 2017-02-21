@@ -173,13 +173,11 @@ var config = {
         "logger":"utils/logger",
         "ajaxwrapper": "utils/ajaxwrapper",
         "download": "utils/download",
-        "eventBinder": "utils/eventBinder",
+        "custom": "utils/jquery.custom",
         "formToJson":"utils/formToJson",
         "uiBuilder": "utils/uiBuilder",
         "uiwrapper": "utils/uiwrapper",
         "bubbleTip": "utils/bubbleTip"
-        
-        
     },
     shim: {
         'bootstrap': {deps:['jquery']},

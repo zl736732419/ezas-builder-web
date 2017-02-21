@@ -3,23 +3,22 @@
  * 使用方式：
  * 1. 引入baseDialog
  * 2. 定义dialog具体实例
- *  function OperationDialog() {
-    }
+ *  function OperationDialog() {}
+    $.customExtend(OperationDialog, BaseDialog); //继承BaseDialog
 
-    OperationDialog.prototype = new BaseDialog();
+    OperationDialog.prototype.renderDialog = function() {
+        renderKeyboardStatus();
+        renderUserGuideStatus();
+    };
+
+    OperationDialog.prototype.initCustomEvent = function() {
+        initKeyBoardSwitchEvent();
+        initUserGuideSwitchEvent();
+    };
 
     var operationDialog = new OperationDialog();
-    Object.defineProperty(operationDialog, 'constructor', {
-        enumerable : false,
-        value : OperationDialog
-    });
-
     operationDialog.config(config);
-    operationDialog.renderDialog = function() {
-    };
-
-    operationDialog.initCustomEvent = function() {
-    };
+ 
  *  具体参考OperationDialog.js
  *  调用方式：引入具体实例dialog 并调用dialogInstance.loadDialog();
  *
@@ -59,6 +58,11 @@
                     ui.toastr.error('dialog参数不能为空!');
                 }
 
+                if(null === this.settings || undefined === this.settings) {
+                    var baseDialog = new BaseDialog();
+                    this.settings = $.extend(true, {}, baseDialog.settings);
+                }
+                
                 $.extend(true, this.settings, config);
                 return this;
             };

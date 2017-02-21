@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    define(['jquery', 'logger', 'uiwrapper', 'settings', 'eventBinder', 'lcSwitch', './base/baseDialog'],
+    define(['jquery', 'logger', 'uiwrapper', 'settings', 'custom', 'lcSwitch', './base/baseDialog'],
         function ($, logger, ui, settings) {
             var dialog = '#operationDialog';
             var form = '#operationForm';
@@ -19,25 +19,20 @@
             };
             
             function OperationDialog() {}
-
-            OperationDialog.prototype = new BaseDialog(); //js原型继承机制
-
-            var operationDialog = new OperationDialog();
-            Object.defineProperty(operationDialog, 'constructor', {
-                enumerable : false,
-                value : OperationDialog
-            });
+            $.customExtend(OperationDialog, BaseDialog); //继承BaseDialog
             
-            operationDialog.config(config);
-            operationDialog.renderDialog = function() {
+            OperationDialog.prototype.renderDialog = function() {
                 renderKeyboardStatus();
                 renderUserGuideStatus();
             };
-
-            operationDialog.initCustomEvent = function() {
+            
+            OperationDialog.prototype.initCustomEvent = function() {
                 initKeyBoardSwitchEvent();
                 initUserGuideSwitchEvent();
             };
+            
+            var operationDialog = new OperationDialog();
+            operationDialog.config(config);
 
             /**
              * 用户手册
