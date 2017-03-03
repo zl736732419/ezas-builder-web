@@ -20,7 +20,6 @@
 <div class="col-sm-offset-1 col-sm-10">
 <#--页面内容-->
     <@dashboard.stepBar orderNum="2" tip="考生基本信息配置(包括姓名、准考证号、学校等参数配置)"/>
-    <@dashboard.blankbar/>
     <@form.edit id="headerSettingForm" showBtnGroups=false>
         <div class="row">
             <@layout class="studentInfoArea" headerCls="label-important" title="基本信息区">

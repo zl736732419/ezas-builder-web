@@ -35,8 +35,6 @@
 <@html entryjs="index" jsMethod="render" css=css title="题卡制作" scroll="true">
 <#--头部信息-->
     <@headerBar title="题卡制作" btns=btns/>
-    <@dashboard.blankbar/>
-
     <@dashboard.container>
         <@content>
             <@item id="item01">
