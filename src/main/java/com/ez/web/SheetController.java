@@ -1,6 +1,5 @@
 package com.ez.web;
 
-import com.ez.commons.web.ModelAndViewFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,7 +16,7 @@ public class SheetController {
 	 */
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public ModelAndView index() {
-		return ModelAndViewFactory.newModelAndViewFor("make/index").build();
+		return new ModelAndView("make/index");
 	}
 	
 	/**
@@ -27,7 +26,7 @@ public class SheetController {
 	 */
 	@RequestMapping(value = "/make", method = RequestMethod.GET)
 	public ModelAndView make() {
-		return ModelAndViewFactory.newModelAndViewFor("make/make").build();
+		return new ModelAndView("make/make");
 	}
 	
 }
